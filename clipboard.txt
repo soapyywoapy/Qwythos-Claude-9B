@@ -1,0 +1,1 @@
+/home/codespace/.cache/huggingface/hub/models--empero-ai--Qwythos-9B-Claude-Mythos-5-1M-GGUF/snapshots/5cebd89dd078b033c26988248740ddadf40f2fbd/Qwythos-9B-Claude-Mythos-5-1M-MTP-Q8_0.gguf
