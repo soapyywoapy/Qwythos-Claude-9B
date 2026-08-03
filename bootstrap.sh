@@ -25,6 +25,13 @@ if [ -n "$GIST_ID" ] && [ -n "$GH_PAT" ]; then
   fi
 fi
 
+# A real tailscaled state file is JSON (starts with '{'). Anything else
+# (placeholder/empty) means no usable key -> treat as first boot.
+if [ -f "$STATE" ] && ! head -c1 "$STATE" | grep -q '{'; then
+  echo "[ts] ignoring non-JSON state (placeholder/no key)"
+  rm -f "$STATE"
+fi
+
 pkill tailscaled 2>/dev/null || true
 rm -f "$SOCK"
 
